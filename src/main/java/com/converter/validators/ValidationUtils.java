@@ -38,7 +38,7 @@ public class ValidationUtils {
 	public static File returnFineTunedOutputXmlPath(String outputXmlPath) throws ValidationException {
 		File outputXmlFile = new File(outputXmlPath);
 		if(outputXmlFile.isDirectory()) {
-			outputXmlFile = new File(outputXmlFile+"\\output.xml");
+			outputXmlFile = new File(outputXmlFile+"//output.xml");
 			System.out.println("Output file will be created as:"+outputXmlFile.getAbsolutePath());
 		}
 		try {

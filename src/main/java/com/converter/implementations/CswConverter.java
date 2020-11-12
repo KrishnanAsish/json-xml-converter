@@ -52,8 +52,12 @@ public class CswConverter implements XMLJSONConverterI {
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unknown exception occured...");
 		}
-		System.out.println("Done creating XML File");
+		System.out.println("====== XML File created ======");
+		System.out.println("File present at:"+outputXml.getAbsolutePath());
 	}
 
 	//Generates the final XML file from using the document object
@@ -142,6 +146,7 @@ public class CswConverter implements XMLJSONConverterI {
 			throw new ValidationException(ConverterConstants.filePathDoesNotExist+inputJson.getAbsolutePath());
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Exception occured while parsing input json file ...");
 			throw new ValidationException(ConverterConstants.exceptionOccurred+e.getMessage());
 		}
 		return jsonDataMap;
